@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ECA8D1631D0822E500D7E7E7 /* MoodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8D1621D0822E500D7E7E7 /* MoodController.swift */; };
 		ECABC3831D07253E00BD57C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABC3821D07253E00BD57C9 /* AppDelegate.swift */; };
 		ECABC3851D07253E00BD57C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABC3841D07253E00BD57C9 /* ViewController.swift */; };
 		ECABC3881D07253E00BD57C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECABC3861D07253E00BD57C9 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ECA8D1621D0822E500D7E7E7 /* MoodController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodController.swift; sourceTree = "<group>"; };
 		ECABC37D1D07253E00BD57C9 /* StyleShaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleShaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECABC3811D07253E00BD57C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECABC3821D07253E00BD57C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				ECABC3891D07253E00BD57C9 /* Images.xcassets */,
 				ECABC38B1D07253E00BD57C9 /* LaunchScreen.xib */,
 				ECABC3801D07253E00BD57C9 /* Supporting Files */,
+				ECA8D1621D0822E500D7E7E7 /* MoodController.swift */,
 			);
 			path = StyleShaker;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECABC3851D07253E00BD57C9 /* ViewController.swift in Sources */,
+				ECA8D1631D0822E500D7E7E7 /* MoodController.swift in Sources */,
 				ECABC3831D07253E00BD57C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +413,7 @@
 				ECABC39E1D07253E00BD57C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECABC39F1D07253E00BD57C9 /* Build configuration list for PBXNativeTarget "StyleShakerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				ECABC3A11D07253E00BD57C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
