@@ -2,12 +2,12 @@
 //  StyleShakerTests.swift
 //  StyleShakerTests
 //
-//  Created by Etudiant on 07/06/2016.
-//  Copyright (c) 2016 esgi. All rights reserved.
+//  Created by Arnaud on 12/06/16.
+//  Copyright © 2016 esgi. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import StyleShaker
 
 class StyleShakerTests: XCTestCase {
     
@@ -23,12 +23,12 @@ class StyleShakerTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }

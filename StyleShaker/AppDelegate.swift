@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  StyleShaker
 //
-//  Created by Etudiant on 07/06/2016.
-//  Copyright (c) 2016 esgi. All rights reserved.
+//  Created by Arnaud on 12/06/16.
+//  Copyright © 2016 esgi. All rights reserved.
 //
 
 import UIKit
