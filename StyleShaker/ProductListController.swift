@@ -8,12 +8,19 @@
 
 import UIKit
 
-class ProductListController: UIViewController, UITableViewDelegate /*UITableViewDataSource*/  {
+class ProductListController: UITableViewController  {
 
-    var posts: [String] = [];
+    var party : Bool = false
+    var weekend : Bool = false
+    var chill : Bool = false
+    var work : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(party)
+        print(weekend)
+        print(chill)
+        print(work)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -23,8 +30,9 @@ class ProductListController: UIViewController, UITableViewDelegate /*UITableView
     }
     
     // MARK: - UITableview Datasource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.posts.count;
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1;
+        //return self.posts.count;
     }
     
     /*func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -37,7 +45,8 @@ class ProductListController: UIViewController, UITableViewDelegate /*UITableView
         return cell
     }*/
     
-    // MARK: - UITableview Delegate
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    // MARK: - UITableview Deleoverride gate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //self.performSegueWithIdentifier("ToDetail", sender: self.posts[indexPath.row]);
-    }}
+    }
+}

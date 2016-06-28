@@ -62,8 +62,8 @@ class MeController: UIViewController {
         }
         if (skinSwitch.on) {
             if(lightSkin.selected) {
-                skin["light"] = true
-                skin["dark"] = false
+                skin["bright"] = true
+                skin["dark"] = true
             }
             else if (darkSkin.selected) {
                 skin["bright"] = false
@@ -79,12 +79,16 @@ class MeController: UIViewController {
                 gender["male"] = false
                 gender["female"] = true
             }
+            
         }
-        /*
-        let controller: ViewController = segue.destinationViewController as! ViewController
         
-        controller.view.backgroundColor = button.backgroundColor
-         */
+        let controller: MoodController = segue.destinationViewController as! MoodController
+        controller.hairbright = hair["bright"]!
+        controller.hairDark = hair["dark"]!
+        controller.skinBright = skin["bright"]!
+        controller.skinDark = skin["dark"]!
+        controller.genderFemale = gender["female"]!
+        controller.genderMale = gender["male"]!
     }
     
     @IBAction func selectButton(sender: AnyObject) {
