@@ -8,9 +8,14 @@
 
 import UIKit
 
-<<<<<<< HEAD
-class ProductListController: UITableViewController  {
 
+let API_ENDPOINT: NSURL = NSURL(string: "http://163.172.27.134/api/products")!
+
+class ProductListController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var products: [Product] = []
+    
     var party : Bool = false
     var weekend : Bool = false
     var chill : Bool = false
@@ -22,20 +27,7 @@ class ProductListController: UITableViewController  {
         print(weekend)
         print(chill)
         print(work)
-        // Do any additional setup after loading the view, typically from a nib.
-=======
-let API_ENDPOINT: NSURL = NSURL(string: "163.172.27.134/api/products")!
-
-class ProductListController: UIViewController, UITableViewDelegate, UITableViewDataSource
-{
-    
-    @IBOutlet weak var tableView: UITableView!
-    var posts: [Product] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.tableView.registerNib(UINib(nibName: "PostTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "PostCell")
+        self.tableView.registerNib(UINib(nibName: "ProductTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "ProductCell")
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
@@ -43,14 +35,23 @@ class ProductListController: UIViewController, UITableViewDelegate, UITableViewD
         let task = NSURLSession.sharedSession().dataTaskWithURL(API_ENDPOINT) { (data, response, error) in
             do {
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                
+                
                 for item in json as! [[String: AnyObject]] {
                     
-                    let post: Product = Product(id: item["id"] as! String,
-                        userId: item["userId"] as! Int,
-                        title: item["title"] as! String,
-                        body: item["body"] as! String)
+                    let post: Product = Product(fromId: item["id"] as! String,
+                                                fromTitle: item["title"] as! String,
+                                                fromPicture: item["picture"] as! String,
+                                                fromAbout: item["about"] as! String,
+                                                //thumbnail: item["thumbnail"] as! String,
+                        //picture: item["picture"] as! String,
+                        fromTags: item["tags"] as! [String],
+                        fromMood: item["criteria"]!["mood"] as![String : Bool],
+                        fromGender: item["criteria"]!["gender"] as![String : Bool],
+                        fromHair: item["criteria"]!["hair"] as![String : Bool],
+                        fromSkin: item["criteria"]!["skin"] as![String : Bool])
                     
-                    self.posts.append(post);
+                    self.products.append(post);
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), {
@@ -64,7 +65,6 @@ class ProductListController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         task.resume()
->>>>>>> 60ab9ea1caf4a4fcbf0293aca7e682d21eaa8cfc
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,28 +73,27 @@ class ProductListController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     // MARK: - UITableview Datasource
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
-        //return self.posts.count;
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.products.count;
     }
-    
-    /*func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: PostTableViewCell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostTableViewCell
-        let post: Post = self.posts[indexPath.row];
-        
-        cell.lblId.text = "\(post.id)"
-        cell.lblTitle.text = post.title
+ 
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell : ProductTableViewCell = tableView.dequeueReusableCellWithIdentifier("ProductCell") as! ProductTableViewCell
+        let product: Product = self.products[indexPath.row];
+ 
+        cell.lblId.text = "\(product.id)"
+        cell.lblTitle.text = product.title
         
         return cell
-    }*/
-    
-    // MARK: - UITableview Deleoverride gate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //self.performSegueWithIdentifier("ToDetail", sender: self.posts[indexPath.row]);
-<<<<<<< HEAD
     }
+ 
+    // MARK: - UITableview Delegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("detailProductView", sender: self.products[indexPath.row]);
+    }
+    
+    @IBAction func goToAbout(sender: AnyObject) {
+        self.performSegueWithIdentifier("aboutView", sender: self);
+    }
+    
 }
-=======
-    }}
-
->>>>>>> 60ab9ea1caf4a4fcbf0293aca7e682d21eaa8cfc

@@ -33,15 +33,20 @@ class MoodController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-        //let vc: UITableViewController = segue.destinationViewController as! UITableViewController
-        //let controller = vc.topViewController as! ProductListController
+        if "productView" == segue.identifier {
+            let controller : ProductListController = segue.destinationViewController as! ProductListController
+            
+            controller.party = soireeSwitch.on
+            controller.work = workSwitch.on
+            controller.chill = chillSwitch.on
+            controller.weekend = weekendSwitch.on
+        }
         
-        let controller = segue.destinationViewController as! ProductListController
-        controller.party = soireeSwitch.on
-        controller.work = workSwitch.on
-        controller.chill = chillSwitch.on
-        controller.weekend = weekendSwitch.on
     }
+    
+    @IBAction func validateStyle(sender: AnyObject) {
+        self.performSegueWithIdentifier("productView", sender : self)
+    }
+    
     
 }

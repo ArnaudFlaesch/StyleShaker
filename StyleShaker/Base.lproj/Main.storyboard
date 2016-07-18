@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LdS-h7-L3I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LdS-h7-L3I">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -71,19 +71,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BDV-FA-UJb">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Dia-o9-LdM"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Valider" id="pjq-e6-hz2">
-                                        <connections>
-                                            <segue destination="Xrd-hZ-TdM" kind="show" id="dah-38-5VW"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsF-kW-hXy">
                                 <rect key="frame" x="402" y="230" width="61" height="30"/>
                                 <state key="normal" title="Foncés">
@@ -144,6 +131,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BDV-FA-UJb">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Dia-o9-LdM"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Valider" id="pjq-e6-hz2">
+                                        <connections>
+                                            <action selector="validateMyStyle:" destination="5gX-zA-4c0" id="HqD-dc-qAK"/>
+                                            <segue destination="Xrd-hZ-TdM" kind="show" id="dah-38-5VW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -174,6 +175,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="Khl-XL-z7S"/>
                         <barButtonItem key="rightBarButtonItem" title="About" id="BBJ-Mi-C18">
                             <connections>
+                                <action selector="goToAbout:" destination="5gX-zA-4c0" id="SB8-Dn-szb"/>
                                 <segue destination="CHa-SI-kGT" kind="show" id="EV6-7J-iYs"/>
                             </connections>
                         </barButtonItem>
@@ -247,6 +249,12 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ey0-bk-Tdz">
                                 <rect key="frame" x="397" y="357" width="51" height="31"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MON MOOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3d5-Xh-Z0I">
+                                <rect key="frame" x="252" y="89" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knq-iO-sEt">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <constraints>
@@ -255,17 +263,12 @@
                                 <items>
                                     <barButtonItem title="Valider" id="jgR-fw-kUt">
                                         <connections>
+                                            <action selector="validateStyle:" destination="Xrd-hZ-TdM" id="QM4-YH-Boy"/>
                                             <segue destination="bZU-vT-36h" kind="show" id="YQm-xi-zPQ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MON MOOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3d5-Xh-Z0I">
-                                <rect key="frame" x="252" y="89" width="96" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -379,7 +382,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="3c3-D9-GyD" kind="show" id="bSG-A9-8du"/>
+                                    <segue destination="3c3-D9-GyD" kind="show" identifier="detailProductView" id="bSG-A9-8du"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -392,10 +395,14 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="tAz-DD-Zme"/>
                         <barButtonItem key="rightBarButtonItem" title="About" id="24e-jT-zXf">
                             <connections>
+                                <action selector="goToAbout:" destination="bZU-vT-36h" id="eCB-OT-Pl4"/>
                                 <segue destination="CHa-SI-kGT" kind="show" id="0IE-2c-rCX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="iN7-Un-VcN" id="9IN-Eo-IVG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Yl-3o-3z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

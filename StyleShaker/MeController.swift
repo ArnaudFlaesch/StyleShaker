@@ -48,8 +48,7 @@ class MeController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+    @IBAction func validateMyStyle(sender: AnyObject) {
         if (hairSwitch.on) {
             if(lightHair.selected) {
                 hair["bright"] = true
@@ -82,13 +81,24 @@ class MeController: UIViewController {
             
         }
         
-        let controller: MoodController = segue.destinationViewController as! MoodController
-        controller.hairbright = hair["bright"]!
-        controller.hairDark = hair["dark"]!
-        controller.skinBright = skin["bright"]!
-        controller.skinDark = skin["dark"]!
-        controller.genderFemale = gender["female"]!
-        controller.genderMale = gender["male"]!
+        self.performSegueWithIdentifier("moodView", sender : self)
+    }
+    
+    
+    @IBAction func goToAbout(sender: AnyObject) {
+        self.performSegueWithIdentifier("aboutView", sender : self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "moodView" == segue.identifier {
+            let controller : MoodController = segue.destinationViewController as!  MoodController
+            controller.hairbright = hair["bright"]!
+            controller.hairDark = hair["dark"]!
+            controller.skinBright = skin["bright"]!
+            controller.skinDark = skin["dark"]!
+            controller.genderFemale = gender["female"]!
+            controller.genderMale = gender["male"]!
+        }
     }
     
     @IBAction func selectButton(sender: AnyObject) {

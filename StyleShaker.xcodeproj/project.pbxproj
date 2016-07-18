@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		51491B161D0F168000E7E70D /* MoodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51491B151D0F168000E7E70D /* MoodController.swift */; };
+		5153FEF51D3D5FAA00FE95BC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153FEF41D3D5FAA00FE95BC /* Product.swift */; };
+		5153FEFF1D3D86EC00FE95BC /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5153FEFE1D3D86EC00FE95BC /* ProductTableViewCell.xib */; };
+		5153FF011D3D874500FE95BC /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153FF001D3D874500FE95BC /* ProductTableViewCell.swift */; };
 		516DD2751D200C2F00072F7E /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516DD2741D200C2F00072F7E /* ProductListController.swift */; };
 		516DD2771D200CC000072F7E /* DetailProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516DD2761D200CC000072F7E /* DetailProductController.swift */; };
 		516DD2791D200CED00072F7E /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516DD2781D200CED00072F7E /* AboutController.swift */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		51491B151D0F168000E7E70D /* MoodController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodController.swift; sourceTree = "<group>"; };
+		5153FEF41D3D5FAA00FE95BC /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		5153FEFE1D3D86EC00FE95BC /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		5153FF001D3D874500FE95BC /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		516DD2741D200C2F00072F7E /* ProductListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
 		516DD2761D200CC000072F7E /* DetailProductController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProductController.swift; sourceTree = "<group>"; };
 		516DD2781D200CED00072F7E /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
@@ -115,9 +121,12 @@
 				51C16D7B1D0DC70600F8CDBA /* Info.plist */,
 				51491B151D0F168000E7E70D /* MoodController.swift */,
 				516DD2741D200C2F00072F7E /* ProductListController.swift */,
+				5153FEF41D3D5FAA00FE95BC /* Product.swift */,
 				516DD2761D200CC000072F7E /* DetailProductController.swift */,
 				516DD2781D200CED00072F7E /* AboutController.swift */,
 				516DD27A1D2016DB00072F7E /* ShoppingListController.swift */,
+				5153FF001D3D874500FE95BC /* ProductTableViewCell.swift */,
+				5153FEFE1D3D86EC00FE95BC /* ProductTableViewCell.xib */,
 			);
 			path = StyleShaker;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 				51C16D7A1D0DC70600F8CDBA /* LaunchScreen.storyboard in Resources */,
 				51C16D771D0DC70600F8CDBA /* Assets.xcassets in Resources */,
 				51C16D751D0DC70600F8CDBA /* Main.storyboard in Resources */,
+				5153FEFF1D3D86EC00FE95BC /* ProductTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,12 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C16D721D0DC70600F8CDBA /* MeController.swift in Sources */,
+				5153FEF51D3D5FAA00FE95BC /* Product.swift in Sources */,
 				51491B161D0F168000E7E70D /* MoodController.swift in Sources */,
 				51C16D701D0DC70600F8CDBA /* AppDelegate.swift in Sources */,
 				516DD27B1D2016DB00072F7E /* ShoppingListController.swift in Sources */,
 				516DD2771D200CC000072F7E /* DetailProductController.swift in Sources */,
 				516DD2751D200C2F00072F7E /* ProductListController.swift in Sources */,
 				516DD2791D200CED00072F7E /* AboutController.swift in Sources */,
+				5153FF011D3D874500FE95BC /* ProductTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
