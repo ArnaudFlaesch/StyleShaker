@@ -48,5 +48,7 @@ class MoodController: UIViewController {
         self.performSegueWithIdentifier("productView", sender : self)
     }
     
+    @IBAction func moodToAbout(sender: AnyObject) {
+        self.performSegueWithIdentifier("fromMoodToAbout", sender : self)    }
     
 }

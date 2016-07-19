@@ -285,7 +285,8 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="DFf-fU-Bup"/>
                         <barButtonItem key="rightBarButtonItem" title="About" id="ask-1j-ozo">
                             <connections>
-                                <segue destination="CHa-SI-kGT" kind="show" id="w3V-Fm-fCD"/>
+                                <action selector="moodToAbout:" destination="Xrd-hZ-TdM" id="8s6-qd-2nQ"/>
+                                <segue destination="CHa-SI-kGT" kind="show" identifier="fromMoodToAbout" id="w3V-Fm-fCD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -315,13 +316,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzU-TD-hra">
                                 <rect key="frame" x="96" y="86" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-3s-0Ue">
                                 <rect key="frame" x="98" y="326" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkl-Kh-Z8Z">
@@ -332,13 +333,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arnaud Flaesch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sf-o4-5wZ">
                                 <rect key="frame" x="98" y="146" width="119" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maxime Mollard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gag-N0-3q1">
                                 <rect key="frame" x="96" y="189" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Développeur" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e5L-34-3rJ">
@@ -419,22 +420,77 @@
                     <view key="view" contentMode="scaleToFill" id="9AE-jF-WaU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAi-qJ-hQo">
+                                <rect key="frame" x="87" y="320" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sample text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="81e-Oi-c3F">
+                                <rect key="frame" x="87" y="373" width="426" height="183"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUw-Fu-hjV">
+                                <rect key="frame" x="279" y="252" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AjS-W4-hC2">
+                                <rect key="frame" x="218" y="87" width="164" height="122"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8P-HB-4E1">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="122"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="dkj-3p-V3C"/>
+                                    <constraint firstAttribute="height" constant="122" id="vOt-2j-QPe"/>
+                                </constraints>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ggi-J4-VVL">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Meilleures offres pour ce produit" id="hgK-4Y-MPc">
+                                        <connections>
+                                            <action selector="fromDetailToWebview:" destination="3c3-D9-GyD" id="k3g-gm-mKW"/>
+                                            <segue destination="8mH-8z-49Z" kind="show" identifier="fromDetailToWebView" id="NRG-Iq-dEz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MUw-Fu-hjV" firstAttribute="top" secondItem="q8P-HB-4E1" secondAttribute="bottom" constant="43" id="B5r-4A-38S"/>
+                            <constraint firstItem="AjS-W4-hC2" firstAttribute="centerX" secondItem="9AE-jF-WaU" secondAttribute="centerX" id="DlW-mB-f0h"/>
+                            <constraint firstItem="MUw-Fu-hjV" firstAttribute="centerX" secondItem="q8P-HB-4E1" secondAttribute="centerX" id="OkZ-EE-dgH"/>
+                            <constraint firstItem="jLK-cW-d8A" firstAttribute="top" secondItem="Ggi-J4-VVL" secondAttribute="bottom" id="cFL-BT-Mis"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="STYLE-SHAKER" id="NQZ-Ko-inU">
                         <barButtonItem key="backBarButtonItem" title=" " id="DPT-BX-ARi"/>
                         <barButtonItem key="rightBarButtonItem" title="About" id="tGG-qF-dPQ">
                             <connections>
-                                <segue destination="CHa-SI-kGT" kind="show" id="L6U-LD-eTf"/>
+                                <action selector="fromDetailToAbout:" destination="3c3-D9-GyD" id="9XB-hB-PE4"/>
+                                <segue destination="CHa-SI-kGT" kind="show" identifier="detailToAbout" id="L6U-LD-eTf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageComponent" destination="q8P-HB-4E1" id="p4G-oB-i2U"/>
+                        <outlet property="textAreaComponent" destination="81e-Oi-c3F" id="uxC-Nq-2V6"/>
+                        <outlet property="titleLabel" destination="MUw-Fu-hjV" id="2fS-6e-9yA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHt-1D-WkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-802" y="1945"/>
         </scene>
-        <!--Shopping List Controller-->
+        <!--STYLE-SHAKER-->
         <scene sceneID="vaU-Dp-Ijh">
             <objects>
                 <viewController storyboardIdentifier="webView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8mH-8z-49Z" customClass="ShoppingListController" customModule="StyleShaker" customModuleProvider="target" sceneMemberID="viewController">
@@ -443,6 +499,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                     </webView>
+                    <navigationItem key="navigationItem" title="STYLE-SHAKER" id="Wov-ji-9qH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofy-PU-KOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

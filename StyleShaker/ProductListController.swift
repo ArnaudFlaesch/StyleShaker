@@ -96,4 +96,8 @@ class ProductListController : UIViewController, UITableViewDelegate, UITableView
         self.performSegueWithIdentifier("aboutView", sender: self);
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let controller: DetailProductController = segue.destinationViewController as! DetailProductController
+        controller.product = sender as? Product
+    }
 }
