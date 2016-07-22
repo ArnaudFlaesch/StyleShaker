@@ -32,6 +32,51 @@ class ProductListController : UIViewController, UITableViewDelegate, UITableView
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         
+        parseJsonData();
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - UITableview Datasource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.products.count;
+    }
+ 
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell : ProductTableViewCell = tableView.dequeueReusableCellWithIdentifier("ProductCell") as! ProductTableViewCell
+        let product: Product = self.products[indexPath.row];
+ 
+        if let url = NSURL(string: product.thumbnail) {
+            if let data = NSData(contentsOfURL: url) {
+                cell.imageProduct.image = UIImage(data: data)
+            }
+        }
+        cell.titleProduct.text = product.title
+        
+        return cell
+    }
+ 
+    // MARK: - UITableview Delegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("detailProductView", sender: self.products[indexPath.row]);
+    }
+    
+    @IBAction func goToAbout(sender: AnyObject) {
+        self.performSegueWithIdentifier("aboutView", sender: self);
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "detailProductView") {
+            let controller: DetailProductController = segue.destinationViewController as! DetailProductController
+            controller.product = sender as? Product
+        }
+        
+    }
+    
+    func parseJsonData() {
         let task = NSURLSession.sharedSession().dataTaskWithURL(API_ENDPOINT) { (data, response, error) in
             do {
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
@@ -43,8 +88,7 @@ class ProductListController : UIViewController, UITableViewDelegate, UITableView
                                                 fromTitle: item["title"] as! String,
                                                 fromPicture: item["picture"] as! String,
                                                 fromAbout: item["about"] as! String,
-                                                //thumbnail: item["thumbnail"] as! String,
-                        //picture: item["picture"] as! String,
+                                                fromThumbnail: item["thumbnail"] as! String,
                         fromTags: item["tags"] as! [String],
                         fromMood: item["criteria"]!["mood"] as![String : Bool],
                         fromGender: item["criteria"]!["gender"] as![String : Bool],
@@ -65,39 +109,5 @@ class ProductListController : UIViewController, UITableViewDelegate, UITableView
         }
         
         task.resume()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - UITableview Datasource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.products.count;
-    }
- 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : ProductTableViewCell = tableView.dequeueReusableCellWithIdentifier("ProductCell") as! ProductTableViewCell
-        let product: Product = self.products[indexPath.row];
- 
-        cell.lblId.text = "\(product.id)"
-        cell.lblTitle.text = product.title
-        
-        return cell
-    }
- 
-    // MARK: - UITableview Delegate
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("detailProductView", sender: self.products[indexPath.row]);
-    }
-    
-    @IBAction func goToAbout(sender: AnyObject) {
-        self.performSegueWithIdentifier("aboutView", sender: self);
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller: DetailProductController = segue.destinationViewController as! DetailProductController
-        controller.product = sender as? Product
     }
 }

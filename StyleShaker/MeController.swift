@@ -23,6 +23,8 @@ class MeController: UIViewController {
     @IBOutlet weak var maleSex: UIButton!
     @IBOutlet weak var femaleSex: UIButton!
     
+    @IBOutlet weak var meDescription: UITextField!
+    
     var skin :[String : Bool] = [
         "dark" : false,
         "bright" : false
@@ -40,6 +42,7 @@ class MeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        meDescription.text = "Sélectionnez un critère pour chaque sélection"
         // Do any additional setup after loading the view, typically from a nib.
     }
 

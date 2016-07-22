@@ -20,17 +20,14 @@ class DetailProductController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         if let url = NSURL(string: product!.picture) {
             if let data = NSData(contentsOfURL: url) {
                 imageComponent.image = UIImage(data: data)
             }        
         }
         
-        //imageComponent.image = product?.picture
         titleLabel.text = product!.title
         textAreaComponent.text = product!.about
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,6 +35,14 @@ class DetailProductController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "fromDetailToWebView" == segue.identifier {
+            let controller : ShoppingListController = segue.destinationViewController as! ShoppingListController
+            
+            controller.productTitle = (product?.title)!
+        }
+        
+    }
     @IBAction func fromDetailToAbout(sender: AnyObject) {
         self.performSegueWithIdentifier("detailToAbout", sender: self)
     }

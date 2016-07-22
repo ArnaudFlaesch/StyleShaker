@@ -10,9 +10,11 @@ import UIKit
 
 class AboutController: UIViewController {
     
+    @IBOutlet weak var descriptionFeatures: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        descriptionFeatures.text = "Fonctionnalités : Affichage de la liste de produits depuis l'API, du détail d'un produit et recherche sur Google Shooping"
     }
     
     override func didReceiveMemoryWarning() {

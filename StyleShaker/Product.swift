@@ -13,17 +13,20 @@ class Product {
     var title: String
     var picture: String
     var about: String
+    var thumbnail: String
     var tags: [String]
     var mood: [String : Bool]
     var gender: [String : Bool]
     var hair: [String : Bool]
     var skin: [String : Bool]
     
-    init(fromId id:String, fromTitle title:String, fromPicture picture:String, fromAbout about:String, fromTags tags:[String], fromMood mood:[String : Bool], fromGender gender:[String : Bool], fromHair hair:[String:Bool], fromSkin skin:[String:Bool]){
+    init(fromId id:String, fromTitle title:String, fromPicture picture:String, fromAbout about:String,
+                fromThumbnail thumbnail:String, fromTags tags:[String], fromMood mood:[String : Bool], fromGender gender:[String : Bool], fromHair hair:[String:Bool], fromSkin skin:[String:Bool]){
         self.id = id
         self.title = title
         self.picture = picture
         self.about = about
+        self.thumbnail = thumbnail
         self.tags = tags
         self.mood = mood
         self.gender = gender

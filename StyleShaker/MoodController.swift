@@ -22,6 +22,9 @@ class MoodController: UIViewController {
     @IBOutlet weak var weekendSwitch: UISwitch!
     @IBOutlet weak var chillSwitch: UISwitch!
     
+    
+    @IBOutlet weak var moodDescription: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,6 +32,7 @@ class MoodController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        moodDescription.text = "Sélectionnez un ou plusieurs critères en fonction de votre humeur"
         // Dispose of any resources that can be recreated.
     }
     
